@@ -1,16 +1,16 @@
 === Get My Tweets ===
 Contributors: south_platte
 Donate link: http://www.southplattewebdesign.com/getmytweets-wordpress-plugin/
-Tags: twitter, xmlreader
+Tags: twitter, xmlreader, tweets, twitter plugin
 Requires at least: 2.7
 Tested up to: 2.7
-Stable tag: 0.3.1
+Stable tag: 0.3.2
 
-Simple plugin to return a user defined number of tweets from Twitter.
+Simple plugin to return a user defined number of tweets from Twitter and parse any URLs in the tweet.
 
 == Description ==
 
-Using PHP 5 and XMLReader, this plugin will load a user definable number of Tweets from Twitter.  It requires that the Twitter user name be supplied to the plugin, and the desired number of Tweets to retrieve.  It also requires that user's Twitter timeline be "public" to be able to be parsed and read.  The plugin will parse one link per Tweet.
+Using PHP 5 and XMLReader, this plugin will load a user definable number of Tweets from Twitter.  It requires that the Twitter user name be supplied to the plugin, and the desired number of Tweets to retrieve.  It also requires that user's Twitter timeline be "public" to be able to be parsed and read.  The plugin will parse links within Tweets.
 
 == Installation ==
 
