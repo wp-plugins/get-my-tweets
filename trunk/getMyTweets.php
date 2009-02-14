@@ -3,7 +3,7 @@
 Plugin Name: getMyTweets
 Plugin URI: http://www.southplattewebdesign.com/getMyTweets
 Description: Simple plugin to return a user defined number of tweets from Twitter
-Version: 0.3.1
+Version: 0.3.2
 Author: Billy Nab
 Author URI: http://www.southplattewebdesign.com
 Copyright 2008  Billy Nab  (email : bnab@southplattewebdesign.com)
@@ -26,6 +26,7 @@ Version Changes:
 0.1.1 - Initial version, no URL parsing, no widget
 0.2.1 - Widgetized version
 0.3.1 - Added ability to parse one url in tweets
+0.3.2 - Modified URL parsing method
 */
 function get_my_tweets_menu() {
   add_options_page( 'Get My Tweets', 'Get My Tweets', 8, __FILE__, 'get_my_tweets_options' );
@@ -52,9 +53,10 @@ function get_my_tweets() {
 					{
 						$reader->read();
 						$checkUrl = $reader->value;
-						$pattern = "/http:\/\/(.*?)\/(.+)/";
+						$pattern = "/ http:\/\/(.*?)\/(.*? )/";
 						$replacement = "<a href=\"$0\" target=\"_blank\">$0</a>";
 						$finalString = preg_replace( $pattern, $replacement, $checkUrl );
+						//$finalString = ereg_replace("[[:space:]]+[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]+[[:alnum:]]+[[:space:]]", "<a href=\"\\0\">\\0</a>", $checkUrl);
 						$result .= $finalString . '<br><br>';
 						//break;
 					}//close if noName match
