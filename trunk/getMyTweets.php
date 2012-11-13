@@ -3,7 +3,7 @@
 Plugin Name: getMyTweets
 Plugin URI: http://www.southplattewebdesign.com/getMyTweets
 Description: Simple plugin to return a user defined number of tweets from Twitter
-Version: 0.3.2
+Version: 0.3.3
 Author: Billy Nab
 Author URI: http://www.southplattewebdesign.com
 Copyright 2008  Billy Nab  (email : bnab@southplattewebdesign.com)
@@ -27,6 +27,7 @@ Version Changes:
 0.2.1 - Widgetized version
 0.3.1 - Added ability to parse one url in tweets
 0.3.2 - Modified URL parsing method
+0.3.3 - Modified Twitter API URL
 */
 function get_my_tweets_menu() {
   add_options_page( 'Get My Tweets', 'Get My Tweets', 8, __FILE__, 'get_my_tweets_options' );
@@ -36,7 +37,7 @@ function get_my_tweets() {
 	$twit_usr = get_option( 'twitter_user_name' );
 	$num_tweets = get_option( 'num_tweets_retrieve' );
 	$reader = new XMLReader();
-	$reader->open( 'http://twitter.com/statuses/user_timeline/'.$twit_usr.'.xml?count='.$num_tweets );
+	$reader->open( 'http://api.twitter.com/1/statuses/user_timeline/'.$twit_usr.'.xml?count='.$num_tweets );
 	while ( $reader->read() ) 
 	{
 	   if ( $reader->nodeType == XMLREADER::ELEMENT ) 
