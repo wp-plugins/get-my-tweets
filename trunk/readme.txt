@@ -4,7 +4,7 @@ Donate link: http://www.southplattewebdesign.com/getmytweets-wordpress-plugin/
 Tags: twitter, xmlreader, tweets, twitter plugin
 Requires at least: 2.7
 Tested up to: 2.7
-Stable tag: 0.3.2
+Stable tag: 0.3.3
 
 Simple plugin to return a user defined number of tweets from Twitter and parse any URLs in the tweet.
 
